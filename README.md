@@ -1,3 +1,9 @@
+## Installation
+```bash
+git clone https://github.com/techmaster-vietnam/richmarkdown
+cd richmarkdown && yarn && yarn start
+```
+
 ## Markdown Editor Process
 
 ### Tags style
