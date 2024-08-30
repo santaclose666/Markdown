@@ -1,4 +1,4 @@
-import { EditorView } from "@codemirror/basic-setup";
+import { EditorView } from "@codemirror/view";
 import { tags as t } from "@lezer/highlight";
 import { tags as customTags } from "../custom/codemirror.custom";
 import { HighlightStyle } from "@codemirror/language";
@@ -131,6 +131,7 @@ export const customTheme = EditorView.theme(
       backgroundColor: background,
       color: lineNumber,
       border: "none",
+      display: "none",
     },
 
     ".cm-activeLineGutter": {

@@ -10,7 +10,7 @@ function Markdown() {
   };
 
   return (
-    <div className="flex w-full h-full">
+    <div className="flex overflow-hidden w-full h-screen">
       <Editor data={data} onDataChange={handleChange} />
       <Preview data={data} />
     </div>

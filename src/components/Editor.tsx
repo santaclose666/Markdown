@@ -20,7 +20,6 @@ import {
   historyKeymap,
   indentWithTab,
 } from "@codemirror/commands";
-import {} from "@codemirror/highlight";
 import {
   bracketMatching,
   indentOnInput,
@@ -99,7 +98,6 @@ function Editor({
           highlightSelectionMatches(),
           syntaxHighlighting(defaultHighlightStyle, { fallback: true }),
           lineNumbers(),
-
           markdown({
             base: markdownLanguage,
             codeLanguages: (info) => {
@@ -126,7 +124,7 @@ function Editor({
               Strikethrough,
             ],
           }),
-          // customTheme,
+          customTheme,
 
           keymap.of([
             ...closeBracketsKeymap,
@@ -144,7 +142,7 @@ function Editor({
       });
 
       const view = new EditorView({
-        state: state,
+        state,
         parent: editorRef.current,
       });
 

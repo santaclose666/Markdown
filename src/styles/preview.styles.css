@@ -1,0 +1,278 @@
+:root {
+  --hue2: "hsl(221, 87%, 60%)";
+  --mono1: "hsl(230,8%,24%)";
+  --fontTxt: '-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"';
+  --font: "monospace, Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,Mono, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji";
+}
+
+.named-fence-block {
+  position: relative;
+}
+
+.named-fence-filename {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 8px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--hue2);
+  background: #dce0e5;
+  opacity: 0.8;
+}
+mark {
+  background-color: #fff300;
+  border-radius: 5px;
+  font-weight: 600;
+  color: var(--mono1);
+  padding: 1px 4px;
+}
+
+& p {
+  margin-bottom: 8px;
+}
+
+& ul {
+  margin-bottom: 16px;
+  padding-top: 4px;
+  p {
+    margin-top: 4px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  li > ul li {
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
+  li > ul li:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+& h1,
+& h2,
+& h3,
+& h4 {
+  font-family: "Helvetica", var(--fontTxt);
+  font-weight: bold;
+}
+& h1 {
+  font-size: 32px;
+}
+
+& h2 {
+  font-size: 28px;
+}
+
+& h3 {
+  font-size: 24px;
+}
+
+& h4 {
+  font-size: 20px;
+}
+
+code {
+  font-family: var(--font);
+  background-color: #f9e0df;
+  color: #8f0e00;
+  font-size: 16px;
+  padding: 1px 4px;
+}
+
+& pre {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 8px;
+  overflow-y: unset;
+  overflow-x: auto;
+  background-color: #f6f8fa;
+  code {
+    font-family: var(--font);
+    font-size: 16px;
+    color: #24292f;
+  }
+  code.language-properties span {
+    color: #24292f;
+  }
+}
+& hr {
+  height: 2px;
+}
+&& > *:first-child > *:first-child {
+  margin-top: 0;
+}
+
+.mardown-editor table,
+.show-markdown table {
+  max-width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #f0f0f0;
+}
+
+.mardown-editor table > thead > tr > th,
+.show-markdown table > thead > tr > th {
+  position: relative;
+  color: #000000d9;
+  padding: 6px 13px;
+  overflow-wrap: break-word;
+  font-weight: 600;
+  text-align: center;
+  font-size: 16px;
+  line-height: 24px;
+  background: #fafafa;
+  border-bottom: 1px solid #f0f0f0;
+  border-right: 1px solid #f0f0f0;
+  transition: all 0.3s;
+}
+.mardown-editor table > tbody > tr > td,
+.show-markdown table > tbody > tr > td {
+  position: relative;
+  padding: 6px 13px;
+  overflow-wrap: break-word;
+  border-bottom: 1px solid #f0f0f0;
+  border-right: 1px solid #f0f0f0;
+  transition: all 0.3s;
+  line-height: 24px;
+  display: table-cell;
+  font-size: 16px;
+}
+
+pre code {
+  font-family: monospace, Mono, -apple-system, "Apple Color Emoji",
+    "Segoe UI Emoji" !important;
+}
+pre code.hljs {
+  padding: 4px;
+}
+.mardown-editor code,
+.show-markdown code {
+  padding: 2px 4px;
+  font-size: 100%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+
+.mardown-editor pre,
+.show-markdown pre {
+  display: block;
+  font-size: 14px;
+  line-height: 1.42857143;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #333;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+}
+
+.mardown-editor pre code,
+.show-markdown pre code {
+  color: inherit;
+  background-color: transparent;
+}
+
+.mardown-editor .markdown-it-code-copy,
+.show-markdown .markdown-it-code-copy {
+  transition: all 0.3s;
+  opacity: 0;
+}
+.mardown-editor div:hover > .markdown-it-code-copy,
+.show-markdown div:hover > .markdown-it-code-copy {
+  opacity: 0.8;
+}
+
+.mardown-editor blockquote,
+.show-markdown blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 17.5px;
+  border-left: 5px solid #eee;
+}
+
+.mardown-editor p,
+.show-markdown p {
+  margin-bottom: 0.5em;
+}
+
+.mardown-editor p img,
+.show-markdown p img {
+  display: block;
+  margin: 0 auto;
+}
+
+.mardown-editor h1,
+.mardown-editor h2,
+.mardown-editor h3,
+.mardown-editor h4,
+.show-markdown h1,
+.show-markdown h2,
+.show-markdown h3,
+.show-markdown h4 {
+  font-weight: 600;
+}
+.code-tabs {
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.code-tabs pre,
+.code-tabs input {
+  display: none;
+}
+.code-tabs input:checked + div > pre {
+  display: block;
+}
+.code-tabs label {
+  color: rgba(191, 191, 191, 1);
+  margin-bottom: 0;
+}
+.code-tabs label {
+  color: rgba(191, 191, 191, 1);
+  margin-bottom: 0;
+}
+.code-tabs input:checked + label {
+  color: rgba(38, 38, 38, 1);
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+}
+.code-tabs ul {
+  font-size: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: auto;
+  user-select: none;
+  border-bottom: 1px solid rgb(240, 240, 240);
+}
+.code-tabs li {
+  list-style: none;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0 !important;
+}
+
+.code-tabs label {
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  padding: 2px 10px;
+  margin: 5px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+.code-tabs pre {
+  background-color: #fff !important;
+  border: none;
+}
+
+@media screen and (min-width: 992px) {
+  .mardown-editor p img,
+  .show-markdown p img {
+    max-width: 60%;
+  }
+}

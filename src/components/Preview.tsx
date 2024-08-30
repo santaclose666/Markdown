@@ -2,7 +2,9 @@ import React, { memo, useRef } from "react";
 import { View } from "../models/view.model";
 import { viewStyle } from "../styles";
 import parser from "../custom/markdownParser.custom";
-import "../styles/previewCustom.styles.css";
+import "../styles/preview.styles.css";
+import "github-markdown-css/github-markdown-light.css";
+import "highlight.js/styles/atom-one-light.css";
 
 interface PreviewProps extends View {
   data: string;
@@ -14,8 +16,8 @@ function Preview({ data, width, height }: PreviewProps) {
 
   return (
     <div
-      ref={previewRef}
       className={viewStyle.view}
+      ref={previewRef}
       dangerouslySetInnerHTML={{ __html: contentRender }}
     />
   );

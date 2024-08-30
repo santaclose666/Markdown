@@ -6,4 +6,13 @@ const copyOptions = {
   buttonClass: "",
 };
 
-export default copyOptions;
+const checkboxOption = {
+  disabled: false,
+  divWrap: false,
+  divClass: "checkbox",
+  idPrefix: "cbx_",
+  ulClass: "task-list",
+  liClass: "task-list-item",
+};
+
+export { copyOptions, checkboxOption };

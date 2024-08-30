@@ -1,3 +1,3 @@
 export const styles = {
-  view: "flex-1 h-full border overflow-auto",
+  view: "flex-1 overflow-auto",
 };
