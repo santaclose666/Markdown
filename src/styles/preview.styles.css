@@ -7,6 +7,7 @@
 
 .named-fence-block {
   position: relative;
+  padding-top: 2em;
 }
 
 .named-fence-filename {
@@ -20,6 +21,7 @@
   background: #dce0e5;
   opacity: 0.8;
 }
+
 mark {
   background-color: #fff300;
   border-radius: 5px;
@@ -33,21 +35,14 @@ mark {
 }
 
 & ul {
-  margin-bottom: 16px;
-  padding-top: 4px;
   list-style-type: disc;
   padding-left: 20px;
-  p {
-    margin-top: 4px;
-  }
   li {
-    margin-bottom: 8px;
     margin-left: 15px;
   }
   li > ul li {
     list-style-type: circle;
     margin-top: 0;
-    margin-bottom: 4px;
   }
   li > ul li:last-of-type {
     margin-bottom: 0;
@@ -86,6 +81,15 @@ mark {
 
 & h4 {
   font-size: 20px;
+}
+
+.editor-preview h1,
+.editor-preview h2,
+.editor-preview h3,
+.editor-preview h4,
+.editor-preview h5,
+.editor-preview h6 {
+  border: none;
 }
 
 code {
@@ -243,7 +247,9 @@ blockquote {
 .show-markdown h3,
 .show-markdown h4 {
   font-weight: 600;
+  border: none;
 }
+
 .code-tabs {
   border: 1px solid rgb(240, 240, 240);
   border-radius: 3px;

@@ -63,6 +63,7 @@ function Editor({
   width,
   height,
   containerStyle,
+  onScroll,
 }: EditorProps) {
   const editorRef = useRef(null);
 
@@ -78,11 +79,25 @@ function Editor({
     { leading: true, trailing: true }
   );
 
+  const handleScroll = (_, view: EditorView) => {
+    const { scrollTop, offsetHeight } = view.scrollDOM;
+
+    const scrollRatio = scrollTop / offsetHeight;
+
+    onScroll(scrollTop);
+  };
+
   useEffect(() => {
-    if (editorRef.current) {
+    if (editorRef?.current) {
       const state = EditorState.create({
         doc: data,
         extensions: [
+          EditorView.updateListener.of(handleDocChange),
+
+          EditorView.domEventHandlers({
+            scroll: handleScroll,
+          }),
+
           syntaxHighlighting(customHighlight),
           highlightActiveLineGutter(),
           highlightSpecialChars(),
@@ -136,14 +151,12 @@ function Editor({
             ...markdownKeymap,
             ...searchKeymap,
           ]),
-
-          EditorView.updateListener.of(handleDocChange),
         ],
       });
 
       const view = new EditorView({
         state,
-        parent: editorRef.current,
+        parent: editorRef?.current,
       });
 
       view.dispatch({

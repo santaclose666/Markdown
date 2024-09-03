@@ -1,4 +1,5 @@
 ## Installation
+
 ```bash
 git clone https://github.com/techmaster-vietnam/richmarkdown
 cd richmarkdown && yarn && yarn start
@@ -6,25 +7,16 @@ cd richmarkdown && yarn && yarn start
 
 ## Markdown Editor Process
 
-### Tags style
+### Bug tracking
 
-**Success:**
+**Error:**
 
-- Heading
-- Bold/Italic/Underline
-- Footnotes
-- Strikethrough
-- Checkbox
-- Formula Math (Standard and ChatGPT)
-- Code suggest
-- Highlight text/code
-- Cross Programing Language
-- Mermaid render
-- Table (not yet stable)
-- Blockquotes (not yet stable)
+- Synchronous scroll between Editor and Preview
+- Markdown syntax in table not working
 
-**Fail:**
+**Fixed:**
 
-- Bullet point
-- Index
-- Legacy math formula
+- Bullet point space too high
+- File name code blocks not showing
+- Heading 2 bottom line showing
+- Selection text in editor too dark

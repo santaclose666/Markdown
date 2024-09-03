@@ -25,6 +25,7 @@ import "markdown-it-latex/dist/index.css";
 import "@mdi/font/css/materialdesignicons.css";
 import "github-markdown-css/github-markdown-light.css";
 import "highlight.js/styles/atom-one-light.css";
+import "../styles/preview.styles.css";
 
 const parser = new MarkdownIt({
   html: true,
@@ -45,17 +46,17 @@ parser
   .use(superscript)
   .use(footnote)
   .use(deflist)
+  .use(namedCodeBlock)
   .use(markdownit_imsize, { autofill: true })
   .use(MarkdownItLatex)
   .use(abbreviation)
   .use(insert)
+  .use(plantuml)
   .use(mark)
-  .use(checkbox, checkboxOption)
+  .use(highlight, { hljs })
   .use(copy, copyOptions)
   .use(tabs)
-  .use(markdownItContainer)
-  .use(plantuml)
-  .use(namedCodeBlock)
-  .use(highlight, { hljs });
+  .use(checkbox, checkboxOption)
+  .use(markdownItContainer);
 
 export default parser;

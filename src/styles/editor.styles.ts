@@ -174,7 +174,7 @@ export const customTheme = EditorView.theme(
       padding: "5px 10px",
     },
   },
-  { dark: true }
+  { dark: false }
 );
 
 export const customHighlight = HighlightStyle.define([
