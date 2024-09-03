@@ -16,7 +16,7 @@ function Preview({ data, width, height }: PreviewProps) {
 
   return (
     <div
-      className={viewStyle.view}
+      className={`markdown-body editor-preview ${viewStyle.view}`}
       ref={previewRef}
       dangerouslySetInnerHTML={{ __html: contentRender }}
     />

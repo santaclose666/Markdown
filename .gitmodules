@@ -1,6 +1,0 @@
-[submodule "src/libraries"]
-	path = src/libraries
-	url = https://github.com/techmaster-vietnam/frontend-library
-[submodule "libraries"]
-	path = libraries
-	url = https://github.com/techmaster-vietnam/frontend-library

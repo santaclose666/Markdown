@@ -35,6 +35,8 @@ mark {
 & ul {
   margin-bottom: 16px;
   padding-top: 4px;
+  list-style-type: disc;
+  padding-left: 20px;
   p {
     margin-top: 4px;
   }
@@ -43,11 +45,23 @@ mark {
     margin-left: 15px;
   }
   li > ul li {
+    list-style-type: circle;
     margin-top: 0;
     margin-bottom: 4px;
   }
   li > ul li:last-of-type {
     margin-bottom: 0;
+  }
+}
+
+& ol {
+  padding-left: 20px;
+  margin-bottom: 16px;
+
+  li {
+    list-style-type: decimal;
+    margin-bottom: 8px;
+    margin-left: 15px;
   }
 }
 
@@ -83,6 +97,7 @@ code {
 }
 
 & pre {
+  white-space: pre-wrap;
   margin-top: 16px;
   margin-bottom: 16px;
   padding: 8px;
@@ -110,21 +125,20 @@ code {
   max-width: 100%;
   margin-bottom: 20px;
   border: 1px solid #e0e0e0;
-  border-collapse: collapse; /* Thêm thuộc tính này để kết nối các đường viền lại với nhau */
+  border-collapse: collapse;
 }
 
 .mardown-editor table > thead > tr > th,
 .show-markdown table > thead > tr > th {
-  position: relative;
   color: #333;
-  padding: 10px 15px; /* Tăng kích thước padding để tạo không gian thoáng hơn */
+  padding: 10px 15px;
   overflow-wrap: break-word;
   font-weight: 600;
   text-align: center;
   font-size: 16px;
   line-height: 24px;
-  background: #f5f5f5; /* Màu nền sáng hơn */
-  border-bottom: 2px solid #d9d9d9; /* Đường viền dưới đậm hơn */
+  background: #f5f5f5;
+  border-bottom: 2px solid #d9d9d9;
   border-right: 1px solid #e0e0e0;
   transition: all 0.3s;
 }
@@ -132,7 +146,7 @@ code {
 .mardown-editor table > tbody > tr > td,
 .show-markdown table > tbody > tr > td {
   position: relative;
-  padding: 10px 15px; /* Tăng kích thước padding để đồng bộ với phần tiêu đề */
+  padding: 10px 15px;
   overflow-wrap: break-word;
   border-bottom: 1px solid #e0e0e0;
   border-right: 1px solid #e0e0e0;
@@ -142,7 +156,6 @@ code {
   font-size: 16px;
 }
 
-/* Loại bỏ đường viền phải của ô cuối cùng trong hàng */
 .mardown-editor table > thead > tr > th:last-child,
 .show-markdown table > thead > tr > th:last-child,
 .mardown-editor table > tbody > tr > td:last-child,
@@ -157,8 +170,8 @@ pre code {
 pre code.hljs {
   padding: 4px;
 }
-.mardown-editor code,
-.show-markdown code {
+
+code {
   padding: 2px 4px;
   font-size: 100%;
   color: #c7254e;
@@ -166,8 +179,7 @@ pre code.hljs {
   border-radius: 4px;
 }
 
-.mardown-editor pre,
-.show-markdown pre {
+pre {
   display: block;
   font-size: 14px;
   line-height: 1.42857143;
@@ -180,8 +192,7 @@ pre code.hljs {
   position: relative;
 }
 
-.mardown-editor pre code,
-.show-markdown pre code {
+pre code {
   color: inherit;
   background-color: transparent;
 }
@@ -206,7 +217,7 @@ pre code.hljs {
 
 blockquote {
   padding: 10px 20px;
-  margin: 10px 0;
+  margin-left: 12px;
   border-left: 5px solid #eeeeee;
   font-style: italic;
   color: #555;
@@ -294,28 +305,4 @@ blockquote {
   .show-markdown p img {
     max-width: 60%;
   }
-}
-
-.markdown-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.markdown-table th,
-.markdown-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-.markdown-table th {
-  background-color: #f2f2f2;
-  text-align: left;
-}
-
-.markdown-table tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.markdown-table tr:hover {
-  background-color: #ddd;
 }
