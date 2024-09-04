@@ -1,4 +1,3 @@
-declare module "react-data-export";
 declare module "markdown-it-emoji";
 declare module "markdown-it-sub";
 declare module "markdown-it-sup";
@@ -9,12 +8,9 @@ declare module "markdown-it-ins";
 declare module "markdown-it-mark";
 declare module "markdown-it-highlightjs";
 declare module "markdown-it-code-copy";
-declare module "rehype-figure";
 declare module "markdown-it-named-code-blocks";
 declare module "markdown-it-imsize";
 declare module "markdown-it-latex";
 declare module "markdown-it-codetabs";
-declare module "uuid";
-declare module "query-string";
 declare module "markdown-it-plantuml";
 declare module "markdown-it-texmath";

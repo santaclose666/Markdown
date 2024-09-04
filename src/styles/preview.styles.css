@@ -51,11 +51,9 @@ mark {
 
 & ol {
   padding-left: 20px;
-  margin-bottom: 16px;
 
   li {
     list-style-type: decimal;
-    margin-bottom: 8px;
     margin-left: 15px;
   }
 }

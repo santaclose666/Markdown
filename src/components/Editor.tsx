@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useRef } from "react";
+import React, { memo, MutableRefObject, Ref, useEffect, useRef } from "react";
 import { View } from "../models/view.model";
 import { viewStyle } from "../styles";
 import {
@@ -53,11 +53,14 @@ import {
 import { lintKeymap } from "@codemirror/lint";
 
 interface EditorProps extends View {
+  editorViewRef: any;
   data: string;
   onDataChange: (s: string) => void;
+  onScroll: (scroll?: number) => void;
 }
 
 function Editor({
+  editorViewRef,
   data,
   onDataChange,
   width,
@@ -80,11 +83,11 @@ function Editor({
   );
 
   const handleScroll = (_, view: EditorView) => {
-    const { scrollTop, offsetHeight } = view.scrollDOM;
+    const { scrollTop, scrollHeight } = view.scrollDOM;
 
-    const scrollRatio = scrollTop / offsetHeight;
+    const scrollRatio = scrollTop / scrollHeight;
 
-    onScroll(scrollTop);
+    onScroll && onScroll(scrollRatio);
   };
 
   useEffect(() => {
@@ -162,6 +165,10 @@ function Editor({
       view.dispatch({
         changes: { from: 0, to: view.state.doc.length, insert: data },
       });
+
+      if (editorViewRef) {
+        editorViewRef.current = view;
+      }
 
       return () => {
         view.destroy();
